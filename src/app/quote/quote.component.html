@@ -108,11 +108,7 @@ nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top" id="na
           <button class="btn btn-primary" (click)="toggleDetails(i)">
             Details
           </button>
-          <app-quote-detail
-            *ngIf="quote.showDetail"
-            [quote]="quote"
-            (isDeleteQuote)="quoteDelete($event, i)"
-          ></app-quote-detail>
+          <app-quote-detail *ngIf="quote.showDetail"[quote]="quote"(isDeleteQuote)="quoteDelete($event, i)" ></app-quote-detail>
         </div>
       </div>
     </div>
