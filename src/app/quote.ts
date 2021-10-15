@@ -1,2 +1,4 @@
-export class Quote {
-}
+export class Quote (public id:number, public quote: string, public author: string, public publisher: string){
+    
+} 
+
