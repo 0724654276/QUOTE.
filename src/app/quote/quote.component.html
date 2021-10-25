@@ -1,5 +1,4 @@
 <div id="home">
-
 </div>
 <div id="quote">
   <main class="site-main">
@@ -7,60 +6,53 @@
       <div class="container"><br>
         <br>
         <div class="row">
-          <!-- <div class="col-lg-6 col-md-12 banner-image">
-            <img src="./assets/quote1.svg" loading="lazy" alt="" class="img-fluid">
-          </div> -->
           <div class="col-md-6">
             <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-        </div>
+          </div>
         </div>
       </div>
     </section><br>
     <br>
-    <br>  
+    <br>
 
-
-<div id="check">
-  <main class="site-main">
-    <section id="home" class="site-banner">
-      <div class="container">
-        <h1 class="responsive-headline">HERE ARE YOUR QUOTES</h1>
-        <hr>
-        <div class="row">
-          <div class="col-md-6">
-            <div *ngFor='let quote of quotes;let i = index'>
-                <div>
-                    <h4 id={{i}} appStrikethrough>{{quote.name}} Published on: {{quote.completeDate|date|uppercase}}</h4>
-                </div>
-                <button (click)='toggleDetails(i)' class="btn btn-primary">View Quote</button>
-                <div *ngIf='quote.showDescription'>
+    <div id="check">
+      <main class="site-main">
+        <section id="home" class="site-banner">
+          <div class="container">
+            <h1 class="responsive-headline">HERE ARE YOUR QUOTES</h1>
+            <hr>
+            <div class="row">
+              <div class="col-md-6">
+                <div *ngFor='let quote of quotes;let i = index'>
+                  <div>
+                    <h4 id={{i}} appStrikethrough>{{quote.name}} Published on: {{quote.completeDate|date|uppercase}}
+                    </h4>
+                  </div>
+                  <button (click)='toggleDetails(i)' class="btn btn-primary">View Quote</button>
+                  <div *ngIf='quote.showDescription'>
                     <app-quote-detail [goal]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                  </div>
                 </div>
+              </div>
+              <div class="col-lg-6 col-md-12 banner-image">
+                <div class="col-lg-6 col-md-12 banner-image">
+
+                </div>
+              </div>
             </div>
           </div>
-           <div class="col-lg-6 col-md-12 banner-image"> 
-             <div class="col-lg-6 col-md-12 banner-image">
-               <!-- <img src="./assets/location search-bro.png" loading="lazy" alt="" class="img-fluid">   -->
-             </div> 
-            <!-- <img src="./assets/check.png" loading="lazy" alt="" class="img-fluid"> --> -->
-           </div>
-        </div>
-      </div>
-      <!-- <a href="#home"><img src="./assets/up.png" alt=" mouse_click" id="mouse-click1" style=""></a>  -->
+        </section>
 
-    </section>
-    <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-            <ul class="copyright">
-               <li>&copy; Copyright 2021 Rono Shalin </li> 
-            </ul>
-          </div> 
-          <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-      </div>
-
-      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-  
-    </footer> 
+        <footer>
+          <div class="row">
+            <div class="twelve columns">
+              <ul class="copyright">
+                <li>&copy; Copyright 2021 GEORGE KAMAKIA</li>
+              </ul>
+            </div>
+            <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a>
+            </div>
+          </div>
+          <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a>
+          </div>
+        </footer>

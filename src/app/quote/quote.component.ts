@@ -11,9 +11,9 @@ import { Quote } from "../quote";
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1, 'Makori Naph', '"Life is what happens when you’re busy making other plans."', 'John Lenon', new Date(2021,3,4)),
-    new Quote(2,'Rono Shalin','"Happiness is when what you think, what you say and what you do are in harmony."', 'Thomas A. Edison', new Date(2021,1,4)),
-    new Quote(3, 'Calvin Mutai', '"Be kind whenever possible."', 'George Sand', new Date(2021,3,4)),
+    new Quote(1, 'George Kamakia', '"Experience is the name everyone gives to their mistakes."', 'Oscar Wilde', new Date(2021,10,11)),
+    new Quote(2,'Esther Wangui','"Java is to Jvascript what car is to carpet."', 'Chris Heilmann', new Date(2021,10,4)),
+    new Quote(3, 'Ruth Wambui', '"Ruby is rubbish!PHP is phpantastic."', 'Nikita Popov', new Date(2021,10,5)),
 
   ];
 

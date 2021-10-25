@@ -1,3 +1,360 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css'
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+body {
+    margin: 0;
+ }
+   
+  
+  
+  
+  /* primary navigation
+  --------------------------------------------------------------------- */
+  #nav-wrap ul, #nav-wrap li, #nav-wrap a {
+       margin: 0;
+       padding: 0;
+       border: none;
+       outline: none;
+  }
+  
+  /* nav-wrap */
+  #nav-wrap {
+     font: 12px 'opensans-bold', sans-serif;
+     width: 100%;
+     text-transform: uppercase;
+     letter-spacing: 2.5px;
+     margin: 0 auto;
+     z-index: 100;
+     position: fixed;
+     left: 0;
+     top: 0;
+  }
+  .opaque { background-color: #333; }
+  
+  /* hide toggle button */
+  #nav-wrap > a.mobile-btn { display: none; }
+  
+  ul#nav {
+     min-height: 48px;
+     width: auto;
+  
+     /* center align the menu */
+     text-align: center;
+  }
+  ul#nav li {
+     position: relative;
+     list-style: none;
+     height: 48px;
+     display: inline-block;
+  }
+  
+  /* Links */
+  ul#nav li a {
+  
+  /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
+  
+     display: inline-block;
+     padding: 8px 13px;
+     line-height: 32px;
+      text-decoration: none;
+     text-align: left;
+     color: #fff;
+  
+      -webkit-transition: color .2s ease-in-out;
+      -moz-transition: color .2s ease-in-out;
+      -o-transition: color .2s ease-in-out;
+      -ms-transition: color .2s ease-in-out;
+      transition: color .2s ease-in-out;
+  }
+  
+  ul#nav li a:active { background-color: transparent !important; }
+  ul#nav li.current a { color: #1c11b0; }
+ 
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    padding-top: 40px;
+ }
+ 
+ .site-main .site-banner .banner-image img {
+    padding: 7rem 0;
+    width: 90rem;
+ }
+ img {
+    vertical-align: middle;
+    border-style: none;
+    
+ }
+  
+ 
+ /* Style for the testing column in html */
+ 
+ .header_area .main_menu .navbar .navbar-brand {
+    padding: 0.2rem, 0.5rem;
+  }
+  .header_area .main_menu .navbar {
+    padding: 1rem 20rem;
+  }
+  .header_area .main_menu .nav-item .nav-link {
+    font: normal 500 15px/2px var(--roboto);
+    text-transform: uppercase;
+    padding: 1.7rem;
+    color: var(--title-color);
+  }
+  .header_area .main_menu .navbar-nav .active a {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .header_area .main_menu .navbar-nav :hover {
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+ 
+  .site-main .site-banner .site-title h3 {
+    padding-top: 35%;
+    font-weight: 400;
+    font-size: 2rem;
+  }
+  .site-main .site-banner .site-title h3::after {
+    content: "";
+    height: 2px;
+    width: 30vh;
+    background: black;
+    display: inline-block;
+    margin-left: 4%;
+    transform: translateY(-4px);
+  }
+  .site-main .site-banner .site-title h2 {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  .site-main .site-banner .site-title h4 {
+    font-size: 1.5rem;
+    font-weight: 380;
+  }
+  .site-main .site-banner .banner-image img {
+    padding: 7rem 0;
+    width: 90rem;
+  }
+ 
+  /* Style for footer copyright */
+  footer {
+    padding-top: 48px;
+    margin-bottom: 48px;
+    color: #303030;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+ }
+ 
+ footer a, footer a:visited { color: #525252; }
+ footer a:hover, footer a:focus { color: #fff; }
+ 
+ /* copyright */
+ footer .copyright {
+     margin: 0;
+     padding: 0;
+  }
+ footer .copyright li {
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+     line-height: 24px;
+ }
+ .ie footer .copyright li {
+    display: inline;
+ }
+ footer .copyright li:before {
+     content: "\2022";
+     padding-left: 10px;
+     padding-right: 10px;
+     color: #095153;
+ }
+ footer .copyright  li:first-child:before {
+     display: none;
+ }
+ 
+ /* social links */
+ footer .social-links {
+    margin: 18px 0 30px 0;
+    padding: 0;
+    font-size: 30px;
+ }
+ /* footer .social-links li {
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+     margin-left: 42px;
+     color: #F06000;
+ } */
+ 
+ footer .social-links li:first-child { margin-left: 0; }
+ 
+ /* Style for the arrow scroll to quote */
+ 
+  #mouse-click {
+    animation: bounce 2s infinite;
+  }
+ 
+  #mouse-click1{
+     padding-left:50px;
+  }
+  #mouse-click1{
+    animation: bounce 2s infinite;
+ }
+ 
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-55px);
+    }
+    60% {
+      transform: translateY(-45px);
+    }
+  }
+ 
+  /* Styling for the Quote Form */
+  html {
+    height: 100%;
+  }
+  body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: rgb(237, 249, 254);
+  }
+  
+  .login-box {
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    padding-left: 30px;
+    padding: 40px;
+    background: rgba(161, 4, 135, 0.253); 
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #f403f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .login-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
+  
