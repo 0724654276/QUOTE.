@@ -1,7 +1,12 @@
-<div class="card-text mt-2">
-    <p> Author: {{quote.author}} </p>
-    <p> Posted By: {{quote.publisher}} </p>
-    <div>
-        <img src="../../assets/trash.png" alt="delete" (click)= 'quoteDelete(true)' height="25px">
-    </div>
-</div>
+<h5>{{goal.description}}</h5>
+<h6>Author: {{goal.author}}</h6>
+<p>Last added: {{goal.completeDate|dateCount}} days ago.</p>
+<p>Last added: {{goal.completeDate|dateCount}} days ago.</p>
+<div>
+  <p>{{numberOfLikes}}</p>
+  <button (click)='likeButtonClick()' type="button" class="btn btn-success">👍</button>
+  <br>
+  <br>
+  <button (click)='dislikeButton()' type="button" class="btn btn-danger">👎</button>
+</div><br>
+<button (click)='quoteDelete(true)' class="btn btn-outline-danger">Delete Quote</button>

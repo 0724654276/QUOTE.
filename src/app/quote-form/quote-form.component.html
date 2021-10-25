@@ -1,83 +1,47 @@
-<form
-  (ngSubmit)="submitQuote(quoteForm); quoteForm.resetForm({})"
-  #quoteForm="ngForm"
-  autocomplete="off"
->
-  <div
-    class="modal fade"
-    id="staticBackdrop"
-    data-bs-backdrop="static"
-    data-bs-keyboard="false"
-    tabindex="-1"
-    aria-labelledby="staticBackdropLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Publish Quote</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control"
-              id="quote"
-              name="quote"
-              [(ngModel)]="newQuote.quote"
-              placeholder="Things don't have to change the world to be important."
-            />
-            <label for="quote">Quote</label>
-            <div id="textHelp" class="form-text">
-              Your timeless quote goes here
-            </div>
+<div class="container-fluid">
+  <h1 class="responsive-headline">ADD YOUR QUOTE HERE</h1>
+  <hr>
+<div class="login-box">  
+  <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+      <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
+          <div [hidden]="name.valid || name.pristine" class="alert-danger">
+              <p>Name is required</p>
           </div>
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control"
-              id="author"
-              name="author"
-              [(ngModel)]="newQuote.author"
-              placeholder="Steve Jobs"
-            />
-            <label for="floatingInput">Author</label>
-            <div id="emailHelp" class="form-text">Credit the awesome mind</div>
-          </div>
-          <div class="form-floating mb-3">
-            <input
-              type="text"
-              class="form-control"
-              id="publisher"
-              name="publisher"
-              [(ngModel)]="newQuote.publisher"
-              placeholder="name@example.com"
-            />
-            <label for="floatingInput">Publisher</label>
-            <div id="emailHelp" class="form-text">Your name here</div>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Publish Quote</button>
-          </div>
-        </div>
-        <div class="modal-footer d-flex align-items-center justify-content-end">
-          <button
-            type="button"
-            class="btn btn-danger"
-            type="button"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          >
-            Close
-          </button>
-        </div>
       </div>
-    </div>
-  </div>
-</form>
+
+      <div class="form-group">
+          <label for="description">Your Quote</label>
+          <textarea class="form-control" id="description" rows="4" [(ngModel)]="newQuote.description" name="description" #description="ngModel" required></textarea>
+          <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+              <p>Insert Quote!!</p>
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label for="author">Quote Author</label>
+        <input type="text" class="form-control" id="author" placeholder="Author" [(ngModel)]="newQuote.author"
+          name="author" #author="ngModel" required>
+          <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+              <p>Author Required!!</p>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="complete">Date added</label>
+          <input type='date' class="form-control" id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
+      </div>
+      <button type="submit" class="btn btn-success">Add Quote</button><br><input type="reset" name="clear" id=Clr>
+      <br>
+      <a href="#check">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Check Out Your Quotes Here Now!
+        </a>
+  </form>
+ </div>
+  
+</div>

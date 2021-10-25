@@ -1,65 +1,50 @@
 import { Component, OnInit } from '@angular/core';
-import { Quote } from '../quote'
+import { Quote } from "../quote";
+
 
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css']
 })
+
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1,'Any fool can write code that a computer can understand. Good programmers write code that humans can understand', 'Martin Fowler'),
-    new Quote(2,'First, solve the problem. Then, write the code', 'John Johnson'),
-    new Quote(3,'Ruby is rubbish! PHP is phpantastic!', 'Nikita Popov'),
-    new Quote(4,'Code is like humor. When you have to explain it, it’s bad.','Cory House', 
-  ]
-  toggleDetails(index: number) {
-    this.quotes[index].showDetail = !this.quotes[index].showDetail;
-  }
+    new Quote(1, 'Makori Naph', '"Life is what happens when you’re busy making other plans."', 'John Lenon', new Date(2021,3,4)),
+    new Quote(2,'Rono Shalin','"Happiness is when what you think, what you say and what you do are in harmony."', 'Thomas A. Edison', new Date(2021,1,4)),
+    new Quote(3, 'Calvin Mutai', '"Be kind whenever possible."', 'George Sand', new Date(2021,3,4)),
 
-  addNewQuote(quote: Quote) {
+  ];
+
+  addNewQuote(quote:any){
+    console.log(quote)
     let quoteLength = this.quotes.length;
-    quote.id = quoteLength+1;
+    // quoteLength.id = quoteLength+1;
+    quote.completeDate = new Date(quote.completeDate)
     this.quotes.push(quote)
- 
   }
 
-  addUpvote(index: number) {
-    this.quotes[index].upVote += 1
+  toggleDetails(index:any){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
 
-  addDownvote(index: number) {
-    this.quotes[index].downVote += 1
-  }
 
-  get sortByLikes()
-  {
-     return this.quotes.sort((q1, q2) => {
-      return q2.upVote - q1.upVote;
-    })
-  } 
+  deleteQuote(isComplete:any, index:any){
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
 
-  quoteDelete(isDeleteQuote: boolean, index: number) {
-    if (isDeleteQuote) {
-      let toDelete = confirm(`This will remove ${this.quotes[index].publisher}'s quote. Proceed?`)
-      if (toDelete) {
-        this.quotes.splice(index, 1)
+      if (toDelete){
+        this.quotes.splice(index,1)
       }
     }
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  displayInfo(index:any){
+    this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
-}
-
-
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

@@ -1,13 +1,10 @@
-export class Quote {
-    showDetail: boolean
-    postDate!: Date
-    upVote: number
-    downVote: number
-    constructor(public id:number, public quote: string, public author: string, public publisher: string) {
-        this.showDetail = false
-        this.postDate = new Date()
-        this.upVote= 0
-        this.downVote= 0
-    }
-}
 
+  
+export class Quote {
+    showDescription: boolean;
+    constructor(public id: number=0,public name: string='',public description: string='',public author: string='',public completeDate: Date=(new Date)){
+      this.showDescription=false;
+    }
+  
+  
+  }

@@ -1,117 +1,66 @@
-nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top" id="nav">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="nav">
-      <img src="../../assets/Timeless 1.svg" alt="" height="50px" />
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="quotes">Quotes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="footer">Contact</a>
-        </li>
-      </ul>
-      <button>
-        class="btn btn-outline-success"
-        data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop"
-        type="submit"
-        Create Quote
-      </button>
-    </div>
-  </div>
-</nav>
+<div id="home">
 
-<div class="container-fluid banner">
-  <div>
-    class="
-      banner-inner
-      d-flex
-      flex-column
-      justify-content-center
-      align-items-center
-    "
-    <h1 class="display-1 my-5">Timeless Quotes</h1>
-    <p class="h3 mx-5 my-4 text-center">
-      My task, which I am trying to achieve is, by the power of the written
-      word, to make you hear, to make you feel--it is, before all, to make you
-      see.
-    </p>
-    <button>
-      type="button"
-      class="btn btn-primary btn-outline-success my-5 mx-3"
-      data-bs-toggle="modal"
-      data-bs-target="#staticBackdrop"
-      Create Quote
-    </button>
-  </div>
 </div>
-<div class="container-fluid text-center all-quotes d-flex flex-column justify-content-center align-items-center">
-  <h2 class="mt-2">All <span>Quotes</span></h2>
-  <div class="hr mb-3 pd-2"></div>
-</div>
-<div class="container-fluid quote-sec mt-0" id="quotes">
-  <div>
-    class="
-      row row-cols-lg-4 row-cols-md-2 row-cols-sm-1
-      text-center
-      quote-cards
-    "
-    <div>
-      class="col mt-4 mb-3"
-      *ngFor="let quote of sortByLikes; let i = index"
-      appMostliked
-      [sortByLikes]="quotes"
-    
-      <div class="card h-100">
-        <div class="d-flex justify-content-between mx-3">
-          <div class="div">
-            <p class="mt-1">{{ quote.postDate | elapsedTime }}</p>
-          </div>
-          <div class="d-flex my-1 mx-1 justify-content-end align-items-center">
-            <div class="me-3">
-              <img
-                src="../../assets/upVote.png"
-                alt="like"
-                class="me-1"
-                (click)="addUpvote(i)"
-              />
-              {{ quote.upVote }}
-            </div>
-            <div>
-              <img
-                src="../../assets/downVote.png"
-                alt="dislike"
-                class="me-1"
-                (click)="addDownvote(i)"
-              />
-              {{ quote.downVote }}
-            </div>
-          </div>
+<div id="quote">
+  <main class="site-main">
+    <section id="home" class="site-banner">
+      <div class="container"><br>
+        <br>
+        <div class="row">
+          <!-- <div class="col-lg-6 col-md-12 banner-image">
+            <img src="./assets/quote1.svg" loading="lazy" alt="" class="img-fluid">
+          </div> -->
+          <div class="col-md-6">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
         </div>
-        <hr />
-        <div class="card-body">
-          <h5 class="card-title">&#8220; {{ quote.quote }}. &#8221;</h5>
-          <hr />
-          <button class="btn btn-primary" (click)="toggleDetails(i)">
-            Details
-          </button>
-          <app-quote-detail *ngIf="quote.showDetail"[quote]="quote"(isDeleteQuote)="quoteDelete($event, i)" ></app-quote-detail>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section><br>
+    <br>
+    <br>  
 
+
+<div id="check">
+  <main class="site-main">
+    <section id="home" class="site-banner">
+      <div class="container">
+        <h1 class="responsive-headline">HERE ARE YOUR QUOTES</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div *ngFor='let quote of quotes;let i = index'>
+                <div>
+                    <h4 id={{i}} appStrikethrough>{{quote.name}} Published on: {{quote.completeDate|date|uppercase}}</h4>
+                </div>
+                <button (click)='toggleDetails(i)' class="btn btn-primary">View Quote</button>
+                <div *ngIf='quote.showDescription'>
+                    <app-quote-detail [goal]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                </div>
+            </div>
+          </div>
+           <div class="col-lg-6 col-md-12 banner-image"> 
+             <div class="col-lg-6 col-md-12 banner-image">
+               <!-- <img src="./assets/location search-bro.png" loading="lazy" alt="" class="img-fluid">   -->
+             </div> 
+            <!-- <img src="./assets/check.png" loading="lazy" alt="" class="img-fluid"> --> -->
+           </div>
+        </div>
+      </div>
+      <!-- <a href="#home"><img src="./assets/up.png" alt=" mouse_click" id="mouse-click1" style=""></a>  -->
+
+    </section>
+    <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+            <ul class="copyright">
+               <li>&copy; Copyright 2021 Rono Shalin </li> 
+            </ul>
+          </div> 
+          <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+      </div>
+
+      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+  
+    </footer> 
